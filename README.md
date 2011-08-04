@@ -78,4 +78,3 @@ access to api with name (set in setting file) / url.
 oauthTokener.get("credentials", {}, getId);
 
 ```
-s
