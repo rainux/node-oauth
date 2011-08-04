@@ -26,8 +26,8 @@ OAuth = OAuth("sample/object-oauth.js")
 
 ```
 
-jump to Login page
-response is necessary for redirect.
+jump to Login page.
+"response" is necessary for redirect.
 
 ```js
 OAuth.authorize('facebook',{
@@ -41,7 +41,7 @@ OAuth.authorize('facebook',{
 ```
 
 (OAuth 1.0)
-if you don't want to go authorize, you can control after getting request token.
+if you don't want to go authorize page everytime, you can control after getting request token.
 Authorizer object returns. It have setting datas on its fields.
 
 ```js
@@ -72,9 +72,13 @@ oauthTokener.set({
 
 ````
 
-access to api with name (set in setting file) / url.
+access to api with name (set in setting file) / url. data returns after JSON.parse(api-response).
 
 ```js
-oauthTokener.get("credentials", {}, getId);
+oauthTokener.get("credentials", {}, function(err, data){
+  if(err)
+    return ...
+  ...
+  });
 
 ```
